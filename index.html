@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>String Manipulation Tool</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/bootstrap.min.js"></script>
+
+</head>
+<body class="bg-dark">
+    
+<div class="row" style="width: 100%;">
+    <div class="col-12  ">
+        <div id="container" class="container-fluid ">
+            <h2 class="text-center text-light  " style="font-size: 7vh;">JavaScript Assignment</h2>
+            <input type="text" id="inputString" class="form-control mt-5" placeholder="Enter a string">
+            <select id="manipulationType" class="form-select mt-3" >
+                <option value="uppercase">Convert to Uppercase</option>
+                <option value="lowercase">Convert to Lowercase</option>
+                <option value="reverse">Reverse String</option>
+                <option value="substring">Extract Substring</option>
+                <option value="replace">Replace Substring</option>
+                
+            </select>
+            <div id="substringInputs" class="mt-3" style="display: none;">
+                <input class="form-control"  type="text" id="startIndex" placeholder="Start Index">
+                <input class="form-control mt-2 " type="text" id="endIndex" placeholder="End Index">
+            </div>
+        
+            <div id="replaceInputs" class="mt-3" style="display: none;">
+                <input type="text"  class="form-control" id="oldSubstring" placeholder="Old Substring">
+                <input type="text"  class="form-control mt-2" id="newSubstring" placeholder="New Substring">
+            </div>
+            <button onclick="manipulateString()" class="btn btn-danger mt-3">Manipulate</button>
+            <div id="output" class="alert alert-danger mt-3"></div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

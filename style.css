@@ -1,0 +1,38 @@
+body {
+    /* background-color: black; */
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            width: 80%;
+        /* margin-left: 30%;
+        margin-top: 3rem; */
+       margin-top: 5rem;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+           align-items: center;
+        }
+        input[type="text"], select, button {
+            padding: 10px;
+            margin: 5px;
+            min-width: 60%;
+        }
+        button {
+            cursor: pointer;
+            min-width: 60%;
+        }
+        #manipulationType{
+      min-width: 60%;
+        }
+    #output {
+        margin-top: 10px;
+       min-width: 60%;
+    }
+   option{
+    min-width: 100%;
+   }
+   
