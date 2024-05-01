@@ -6,36 +6,54 @@ function manipulateString() {
     
     switch(manipulationType) {
         case "uppercase":
-            output = inputString.toUpperCase();
+             document.getElementById("output").innerText = inputString.toUpperCase();
             break;
         case "lowercase":
-            output = inputString.toLowerCase();
-            break;
+             document.getElementById("output").innerText = inputString.toLowerCase();
+            break
         case "reverse":
-            output = reverseString(inputString);
+             document.getElementById("output").innerText = reverseString(inputString);
             break;
         case "substring":
             var startIndex = parseInt(document.getElementById("startIndex").value);
             var endIndex = parseInt(document.getElementById("endIndex").value);
-            output = inputString.substring(startIndex, endIndex);
+            document.getElementById("output").innerText = inputString.substring(startIndex, endIndex);
             break;
         case "slice":
             var startIndex = parseInt(document.getElementById("startIndex").value);
             var endIndex = parseInt(document.getElementById("endIndex").value);
-            output = inputString.slice(startIndex, endIndex);
+            document.getElementById("output").innerText = inputString.slice(startIndex, endIndex);
             break;
         case "replace":
             var oldSubstring = document.getElementById("oldSubstring").value;
             var newSubstring = document.getElementById("newSubstring").value;
-            output = inputString.replace(oldSubstring, newSubstring);
+            document.getElementById("output").innerText = inputString.replace(oldSubstring, newSubstring);
             break;
+            case "table":
+               var tab=parseInt(inputString);
+               if (isNaN(tab)) {
+                console.log("error");
+                console.log("error");
+                alert("Please Enter a valid Value");
+               
+            } else {
+               
+                for (let i = 1; i <= 10; i++) {
+                    document.getElementById("output").innerHTML += tab + " x " + i + " = " + (tab * i) + "<br>";
+                   
+                }
+            }
+            
+              
+                break;
        
         default:
             output = "Invalid manipulation type";
     }
     
-    document.getElementById("output").innerText = output;
+    // document.getElementById("output").innerText = output;
 }
+
 
 function reverseString(str) {
     var reversed = "";
@@ -56,7 +74,15 @@ document.getElementById("manipulationType").addEventListener("change", function(
     } else if (selectedOption === "replace") {
         document.getElementById("substringInputs").style.display = "none";
         document.getElementById("replaceInputs").style.display = "block";
-    } else {
+    }
+    
+    else if(selectedOption=="table"){
+        var inputElement = document.getElementById("inputString");
+        inputElement.type = "number";
+        inputElement.placeholder = "Enter a number";
+    }
+    
+    else {
         document.getElementById("substringInputs").style.display = "none";
         document.getElementById("replaceInputs").style.display = "none";
     }
